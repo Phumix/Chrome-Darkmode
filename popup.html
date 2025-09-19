@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Mode</title>
+  <style>
+    body { font-family: sans-serif; margin: 10px; width: 260px; }
+    .row { margin-bottom: 10px; }
+    label { display: block; margin-bottom: 4px; }
+    input[type=range] { width: 100%; }
+    button { margin-top: 8px; padding: 6px 12px; }
+    #debugOutput { white-space: pre; font-size: 12px; margin-top: 10px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <label><input type="checkbox" id="toggleDark"> Enable Dark Mode</label>
+  </div>
+
+  <div class="row">
+    <label>Brightness</label>
+    <input type="range" id="brightness" min="30" max="100" value="80">
+  </div>
+
+  <div class="row">
+    <label>Mode</label>
+    <label><input type="radio" name="mode" value="dark" checked> Dark</label>
+    <label><input type="radio" name="mode" value="invert"> Invert</label>
+    <label><input type="radio" name="mode" value="sepia"> Sepia</label>
+    <label><input type="radio" name="mode" value="grayscale"> Grayscale</label>
+  </div>
+
+  <div class="row">
+    <label>Scope</label>
+    <label><input type="radio" name="scope" value="domain" checked> Domain</label>
+    <label><input type="radio" name="scope" value="page"> Page only</label>
+  </div>
+
+  <button id="resetBtn">Reset</button>
+  <button id="debugBtn">Debug</button>
+
+  <div id="debugOutput"></div>
+
+  <script src="commonStorage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
